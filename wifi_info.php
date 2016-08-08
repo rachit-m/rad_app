@@ -1,10 +1,10 @@
 <?php
 	$conn =  mysql_connect('localhost','root','root') or die("cannot connect");
         mysql_select_db("radius_app");
-	$user_contact = $_GET['user_contact'];
-        $ssid = $_GET['ssid'];
-        $bssid = $_GET['bssid'];
-        $password = $_GET['password'];
+	$user_contact = $_POST['user_contact'];
+        $ssid = $_POST['ssid'];
+        $bssid = $_POST['bssid'];
+        $password = $_POST['password'];
 	$bssid=str_replace("-",":","$bssid");
 	$valid=filter_var($bssid, FILTER_VALIDATE_MAC);
 	if($valid)

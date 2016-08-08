@@ -2,9 +2,9 @@
 	$conn = mysql_connect('localhost','root','root') or die("cannot connect");
         mysql_select_db("radius_app");
         $timestamp2=date('Y-m-d H:i:s');
-	$user_os = $_GET['user_os'];
-        $req_id = $_GET['req_id'];
-        $contact = $_GET['contact'];
+	$user_os = $_POST['user_os'];
+        $req_id = $_POST['req_id'];
+        $contact = $_POST['contact'];
         $sql1="SELECT timestamp FROM request_profile WHERE req_id='$req_id' and contact='$contact' and user_os='$user_os'";
         $retval1=mysql_query($sql1);
         $row1=mysql_fetch_array($retval1);
